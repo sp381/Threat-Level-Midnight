@@ -1,40 +1,88 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
+const methodOverride = require('method-override')
+const flash = require('express-flash')
+const session = require('express-session')
+const passport = require('passport')
+const bcrypt = require('bcrypt')
 const express = require('express')
 const app = express()
-const bcrypt = require('bcrypt')
-
-app.use(express.json())
 
 const users = []
 
-app.get('/users', (req, res) => {
-    res.json(users)
+
+const initializePassport = require('./passport-config')
+initializePassport(
+    passport,
+    email => users.find(user => user.email === email),
+    id => users.find(user => user.id === id)
+)
+
+app.set('view-engine', 'ejs')
+app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: false }))
+app.use(flash())
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.get('/', checkAuthenticated, (req, res) => {
+    res.render('index.ejs', { name: req.user.name })
 })
 
-app.post('/users', async (req, res) => {
+app.get('/register', checkNotAuthenticated, (req, res) => {
+    res.render('register.ejs')
+})
+
+app.get('/login', checkNotAuthenticated, (req, res) => {
+    res.render('login.ejs')
+})
+
+app.post('/register', checkNotAuthenticated, async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        const user = { name: req.body.name, password: hashedPassword }
-        users.push(user)
-        res.status(201).send()
+        users.push({
+            id: Date.now().toString(),
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword
+        })
+        res.redirect('/login')
     } catch {
-        res.status(500).send()
+        res.redirect('/register')
     }
+    console.log(users)
 })
 
-app.post('/users/login', async (req, res) => {
-    const user = users.find(user => user.name = req.body.name)
-    if (user == null) {
-        return res.status(400).send('Cannot find user')
-    }
-    try {
-        if(await bcrypt.compare(req.body.password, user.password)) {
-            res.send('Success')
-        } else {
-            res.send('Not Allowed')
-        }
-    } catch {
-        res.status(500).send()
-    }
+app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+}))
+
+app.delete('/logout', (req, res) => {
+    req.logOut()
+    res.redirect('/login')
 })
+
+function checkNotAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return res.redirect('/')
+    }
+    next()
+}
+
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next()
+    }
+    res.redirect('/login')
+}
 
 app.listen(3001)
