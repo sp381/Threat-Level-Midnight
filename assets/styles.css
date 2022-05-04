@@ -1,10 +1,13 @@
 body {
     background-image: url(./images/banned.jpg);
     background-size: cover;
-    background-color: gray;
 }
 
 .button {
     background-color: blue;
     color: white;
+}
+
+.form-group {
+    font-size: small;
 }
