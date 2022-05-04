@@ -1,6 +1,7 @@
 body {
     background-image: url(./images/banned.jpg);
     background-size: contain;
+    background-size: cover;
 }
 
 .topnav {
@@ -15,4 +16,8 @@ button:hover {
 footer {
     color: white;
     text-align: center;
+}
+
+.form-group {
+    font-size: small;
 }
