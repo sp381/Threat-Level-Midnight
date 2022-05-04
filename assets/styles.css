@@ -1,11 +1,21 @@
 body {
     background-image: url(./images/banned.jpg);
+    background-size: contain;
     background-size: cover;
 }
 
-.button {
-    background-color: blue;
+.topnav {
+    float: right;
+    font-size: 10px;
+}
+
+button:hover {
+    background-color: transparent;
+}
+
+footer {
     color: white;
+    text-align: center;
 }
 
 .form-group {
