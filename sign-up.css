@@ -1,0 +1,23 @@
+.form-horizontal {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.form-control {
+    font-style: italic;
+    font-size: 25px;
+    text-align: center;
+    outline-style: solid;
+    outline-width: 0.5px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+body {
+    text-align: center;
+}
+
+.button {
+    font-size: 15px;
+}
+
