@@ -1,0 +1,27 @@
+{
+  "name": "threat-level-midnight",
+  "version": "1.0.0",
+  "description": "Project Two",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sp381/Threat-Level-Midnight.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sp381/Threat-Level-Midnight/issues"
+  },
+  "homepage": "https://github.com/sp381/Threat-Level-Midnight#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
