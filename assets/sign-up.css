@@ -3,6 +3,8 @@
     font-size: 25px;
     color: white;
     padding: 20px;
+    opacity: 0, 0, 0, 0.5;
+    margin: 0 auto;
 }
 
 .form-control {
