@@ -1,26 +1,23 @@
     <section>
         <h1> Create a Login </h1>
-        <form class="form-horizontal">
-            <div class="form-group"> 
-                <label class="control-label col-sm-2" for="first-name"> First Name: </label>
-                <input type="first-name" class="form-control" id="first-name" placeholder="Enter First Name"/>
-            </div>   
-
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="last-name"> Last Name: </label>
-                <input type="first-name" class="form-control" id="last-name" placeholder="Enter Last Name"/>
-            </div>
+        <form class="form-horizontal" id="signup-form">
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="username"> Username: </label>
-                <input type="user-name" class="form-control" id="user-name" placeholder="Enter username"/> 
+                <input type="user-name" class="form-control" id="username-signup" placeholder="Enter username"/> 
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="email"> Email: </label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email"/>
+                <input type="email" class="form-control" id="email-signup" placeholder="Enter email"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="password"> Password: </label>
+                <input type="password" class="form-control" id="password-signup" placeholder="Enter email"/>
             </div>
 
                 <button type="submit">Submit</button>
         </form>
     </section>
+    <script src="/javascript/login.js"></script>
