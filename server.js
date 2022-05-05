@@ -3,15 +3,14 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const methodOverride = require('method-override')
-const flash = require('express-flash')
+const express = require('express')
 const session = require('express-session')
+const flash = require('express-flash')
 const passport = require('passport')
 const bcrypt = require('bcrypt')
-const express = require('express')
 const app = express()
 
 const users = []
-
 
 const initializePassport = require('./passport-config')
 initializePassport(
@@ -21,16 +20,17 @@ initializePassport(
 )
 
 app.set('view-engine', 'ejs')
+app.set('trust proxy', 1)
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
-app.use(passport.initialize())
-app.use(passport.session())
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }))
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.get('/', checkAuthenticated, (req, res) => {
     res.render('index.ejs', { name: req.user.name })
