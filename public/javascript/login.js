@@ -1,11 +1,14 @@
+
 async function signupFormHandler(event) {
-    event.preventDefault();
+  event.preventDefault();
   
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+  const username = document.querySelector('#username').value.trim();
+  const email = document.querySelector('#email').value.trim();
+  const password = document.querySelector('#password').value.trim();
   
-    if (username && email && password) {
+  
+  
+  if (username && email && password) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
@@ -18,17 +21,18 @@ async function signupFormHandler(event) {
   
       if (response.ok) {
         console.log('Sign Up Successful');
+        
       } else {
         alert(response.statusText);
       }
     }
-  }
-
+}
+  
   document.querySelector("#signup-form").addEventListener("submit", signupFormHandler);
 
-
-//SARAH'S CODE
-//   async function login(event) {
+  
+  //SARAH'S CODE
+  //   async function login(event) {
 //     event.preventDefault() 
 //     console.log('hello world');
 //     const email = document.querySelector('#exampleInputEmail1').value 
