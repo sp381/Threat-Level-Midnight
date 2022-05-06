@@ -3,6 +3,9 @@
     font-size: 25px;
     color: white;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 30%;
+    position: center;
 }
 
 .form-control {
