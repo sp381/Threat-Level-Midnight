@@ -11,6 +11,12 @@ body {
     height: fit-content;
 }
 
+#login-btn {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+}
+
 .topnav {
     float: right;
     font-size: 10px;

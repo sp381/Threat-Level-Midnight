@@ -22,8 +22,8 @@
                     <div class="topnav">
                         <div class="login-container">
                             <!-- List Item Element -->
-                                <button type="button" class="btn btn-link"><a href="./sign-up.html"> Sign Up </a></button>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal"> Login </a>
+                                <!-- <button type="button" class="btn btn-link"><a href="./sign-up.html"> Sign Up </a></button> -->
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" id="login-btn"> Log in/Sign up </a>
                         </div>
                     </div>
                     
@@ -64,6 +64,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
+              -------------------------------------------------
+              <br/>
+              <button type="button" class="btn btn-link"><a href="./sign-up.html"> Sign Up </a></button>
         </div>
         <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -74,40 +77,44 @@
   </div>
 
         <!-- Enter Flexboxes for movie posters and comment input boxes -->
-        <article class="movie-posters"> 
+
+        <article class="movie-posters container"> 
             <h3>'The Infamous Movies'</h3>
-            <article class="movie" id="first-movie"> 
+            <div class="row">
+
+            
+            <article class="movie col" id="first-movie"> 
                 <img src="../public/images/Birth_of_a_Nation.jpg" height="400px">
                 <label for="name"> Comment </label>
                 <input class="comment-box" type="text"/>
             </article>
 
-            <article class="movie" id="second-movie"> 
+            <article class="movie col" id="second-movie"> 
                 <img src="../public/images/The Interview.jpg" height="400px">
                 <label for="name"> Comment </label>
                 <input class="comment-box" type="text"/>
             </article>
 
-            <article class="movie" id="third-movie"> 
+            <article class="movie col" id="third-movie"> 
                 <img src="../public/images/Wonder Woman.jpg" height="400px">
                 <label for="name"> Comment </label>
                 
                 <input class="comment-box" type="text"/>
             </article>
 
-            <article class="movie" id="fourth-movie"> 
+            <article class="movie col" id="fourth-movie"> 
                 <img src="../public/images/Noah.jpg" height="400px">
                 <label for="name"> Comment </label>
                 <input class="comment-box" type="text"/>
             </article>
 
-            <article class="movie" id="fifth-movie"> 
-                <img src="../public/images/Da Vinci Code.jpg" height="450">
+            <article class="movie col" id="fifth-movie"> 
+                <img src="../public/images/Da Vinci Code.jpg" height="450px">
                 <label for="name"> Comment </label>
                 <input class="comment-box" type="text"/>
             </article>
 
-            <article class="movie" id="sixth-movie"> 
+            <article class="movie col" id="sixth-movie"> 
                 <h4>"Movie 6 Image"</h4>
                 <label for="name"> Comment </label>
                 <input class="comment-box" type="text"/>
@@ -136,6 +143,7 @@
                 <label for="name"> Comment </label>
                 <input class="comment-box" type="text"/>
             </article>
+        </div>
         </article>
 
     </section>
