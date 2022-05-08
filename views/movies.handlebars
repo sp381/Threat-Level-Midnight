@@ -5,12 +5,14 @@
                 <img src="/images/Birth_of_a_Nation.jpg" height="400px">
                 <textarea class ="comment-box" name="comment-box"></textarea>
                 <button type="submit">Add Comment</button>
+                {{#ifEquals 1 2}}
                 <div>
                     {{comment_text}}
                     {{id}}
-                    {{created_at}}
+                    {{format_date created_at}}
                     {{user.username}}
                 </div>
+                {{/ifEquals}}
             </article>
 
             <article class="movie" id="second-movie"> 
