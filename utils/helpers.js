@@ -4,7 +4,10 @@ module.exports = {
         date
       ).getFullYear()}`;
     },
-    ifEquals: (arg1, arg2, options) =>  {
+    ifEquals: (arg1, arg2, options) => {
         return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
     }
   };
+
+//{{#ifEquals 1 1}}
+//{{/ifEquals}}

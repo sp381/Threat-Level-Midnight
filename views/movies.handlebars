@@ -1,81 +1,81 @@
-        <!-- Enter Flexboxes for movie posters and comment input boxes -->
-        <article class="movie-posters"> 
-            <h3>'The Infamous Movies'</h3>
-            <article class="movie" id="first-movie"> 
-                <img src="/images/Birth_of_a_Nation.jpg" height="400px">
-                <textarea class ="comment-box" name="comment-box"></textarea>
-                <button type="submit">Add Comment</button>
-                {{#ifEquals 1 2}}
+<!-- Enter Flexboxes for movie posters and comment input boxes -->
+<article class="movie-posters">
+    <h3>'The Infamous Movies'</h3>
+    <article class="movie" id="first-movie">
+        <img src="/images/Birth_of_a_Nation.jpg" height="400px">
+        <textarea class="comment-box" name="comment-box1"></textarea>
+        <button type="submit">Add Comment</button>
+        <div>
+            {{comment.comment_text}}
+        </div>
+    </article>
+
+    <article class="movie" id="second-movie">
+        <img src="/images/The Interview.jpg" height="400px">
+        <textarea class="comment-box" name="comment-box"></textarea>
+        <button type="submit">Add Comment</button>
                 <div>
-                    {{comment_text}}
-                    {{id}}
-                    {{format_date created_at}}
-                    {{user.username}}
-                </div>
-                {{/ifEquals}}
-            </article>
+            {{comment_text}}
+            {{id}}
+            {{format_date created_at}}
+            {{user.username}}
+        </div>
+    </article>
 
-            <article class="movie" id="second-movie"> 
-                <img src="/images/The Interview.jpg" height="400px">
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
+    <article class="movie" id="third-movie">
+        <img src="/images/Wonder Woman.jpg" height="400px">
+        <label for="name"> Comment </label>
+        <input class="comment-box" type="text" />
+        <button type="submit">Add Comment</button>
+    </article>
 
-            <article class="movie" id="third-movie"> 
-                <img src="/images/Wonder Woman.jpg" height="400px">
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
+    <article class="movie" id="fourth-movie">
+        <img src="/images/Noah.jpg" height="400px">
+        <label for="name"> Comment </label>
+        <input class="comment-box" type="text" />
+        <button type="submit">Add Comment</button>
+    </article>
 
-            <article class="movie" id="fourth-movie"> 
-                <img src="/images/Noah.jpg" height="400px">
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
+    <article class="movie" id="fifth-movie">
+        <img src="/images/Da Vinci Code.jpg" height="450">
+        <label for="name"> Comment </label>
+        <input class="comment-box" type="text" />
+        <button type="submit">Add Comment</button>
+    </article>
 
-            <article class="movie" id="fifth-movie"> 
-                <img src="/images/Da Vinci Code.jpg" height="450">
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
+    <article class="movie" id="sixth-movie">
+        <h4>"Movie 6 Image"</h4>
+        <label for="name"> Comment </label>
+        <input class="comment-box" type="text" />
+        <button type="submit">Add Comment</button>
+    </article>
 
-            <article class="movie" id="sixth-movie"> 
-                <h4>"Movie 6 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
+    <article class="movie" id="seventh-movie">
+        <h4>"Movie 7 Image"</h4>
+        <label for="name"> Comment </label>
+        <input class="comment-box" type="text" />
+        <button type="submit">Add Comment</button>
+    </article>
 
-            <article class="movie" id="seventh-movie"> 
-                <h4>"Movie 7 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
+    <article class="movie" id="eighth-movie">
+        <h4>"Movie 8 Image"</h4>
+        <label for="name"> Comment </label>
+        <input class="comment-box" type="text" />
+        <button type="submit">Add Comment</button>
+    </article>
 
-            <article class="movie" id="eighth-movie"> 
-                <h4>"Movie 8 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
+    <article class="movie" id="ninth-movie">
+        <h4>"Movie 9 Image"</h4>
+        <label for="name"> Comment </label>
+        <input class="comment-box" type="text" />
+        <button type="submit">Add Comment</button>
+    </article>
 
-            <article class="movie" id="ninth-movie"> 
-                <h4>"Movie 9 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
-
-            <article class="movie" id="tenth-movie"> 
-                <h4>"Movie 10 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-                <button type="submit">Add Comment</button>
-            </article>
-        </article>
-        <script src="/javascript/comment.js"></script>
+    <article class="movie" id="tenth-movie">
+        <h4>"Movie 10 Image"</h4>
+        <label for="name"> Comment </label>
+        <input class="comment-box" type="text" />
+        <button type="submit">Add Comment</button>
+    </article>
+</article>
+<script src="/javascript/comment.js"></script>

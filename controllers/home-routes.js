@@ -1,5 +1,5 @@
 const router = require("express").Router();
-//const { User } = require("../models");
+const { User, Comment } = require("../models");
 
 //HOME PAGE RENDER NAME = HANDLEBARS FILE NAME
 http://localhost:3001/
@@ -14,6 +14,30 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+    Comment.findAll({
+        attributes: [
+            "id",
+            "comment_text",
+            "created_at"
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ["username"]
+            }
+        ]
+    }).then(commentData => {
+        const comments = commentData.map(comment => comment.get({ plain: true }));
+
+        res.render("movies", {
+            comments
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    });
+});
 
 
 //http://localhost:3001/movies = "movies" FILE NAME
@@ -30,6 +54,8 @@ router.get("/sign-up", (req, res) => {
 router.get("/login", (req, res) => {
     res.render("login");
 });
+
+
 
 
 module.exports = router;
