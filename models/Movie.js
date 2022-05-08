@@ -15,6 +15,10 @@ Movie.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    movie_url: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     comment_text: {
       type: DataTypes.INTEGER,
       references: {
