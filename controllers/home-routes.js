@@ -4,7 +4,14 @@ const router = require("express").Router();
 //HOME PAGE RENDER NAME = HANDLEBARS FILE NAME
 http://localhost:3001/
 router.get("/", (req, res) => {
-    res.render("movies");
+    res.render("movies", {
+        id: 1,
+        comment_text: "meow",
+        created_at: new Date(),
+        user: {
+            username: "test_user"
+        }
+    });
 });
 
 
