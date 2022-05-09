@@ -3,7 +3,7 @@ async function commentInput(event) {
     event.preventDefault();
     const btn = event.target;
     const movieId = btn.dataset.movieId;
-    console.log(movieId);
+    //console.log(movieId);
 
 
     const comment_text = document.querySelector(`#comment-${movieId}`).value.trim();

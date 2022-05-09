@@ -8,7 +8,7 @@
         <textarea class="comment-box" id="comment-{{id}}"></textarea>
         <button type="submit" class="add-comment-button" data-movie-id="{{id}}">Add Comment</button>
         {{#each movie.comments as |comment|}}
-            <div> User1 on 05/07/2022</div>
+            <div>{{comment.user.username}} on {{format_date comment.created_at}} </div>
             <div>{{comment.comment_text}}</div>
         {{/each}}
     </article>
