@@ -18,8 +18,9 @@ http://localhost:3001/
 router.get("/", (req, res) => {
     Movie.findAll({
         attributes: [
+            "id",
             "movie_title",
-            "movie_url",
+            "movie_url"
         ],
         include: [
             {
@@ -32,6 +33,7 @@ router.get("/", (req, res) => {
             },
         ]
     }).then(dbMovieData => {
+        console.log(dbMovieData)
         const movies = dbMovieData.map(movie => movie.get({ plain: true }));
         res.render("movies", { movies });
     }).catch(err => {

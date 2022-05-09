@@ -2,16 +2,15 @@
 <article class="movie-posters">
     <h3>'The Infamous Movies'</h3>
     {{#each movies as |movie|}}
+    {{movie_title}}
     <article class="movie" id="first-movie">
         <img src="{{movie_url}}" height="400px">
-        <textarea class="comment-box" name="comment-box1"></textarea>
-        <button type="submit">Add Comment</button>
-        <div>
-            {{comment_text}}
-            {{id}}
-            {{format_date created_at}}
-            {{user.username}}
-        </div>
+        <textarea class="comment-box" id="comment-{{id}}"></textarea>
+        <button type="submit" class="add-comment-button" data-movie-id="{{id}}">Add Comment</button>
+        {{#each movie.comments as |comment|}}
+            <div> User1 on 05/07/2022</div>
+            <div>{{comment.comment_text}}</div>
+        {{/each}}
     </article>
     {{/each}}
 </article>
