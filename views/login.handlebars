@@ -1,17 +1,20 @@
     <section>
         <h1> Login </h1>
         <form class="form-horizontal">
-
+            <h3>Sign in to start discussing now!</h3>
+            <% if(messages.error) { %>
+                <%= messages.error %>
+            <% } %>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="email"> Email: </label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email"/>
+                <input type="email" class="form-control" id="email" name:"email" placeholder="Enter email" required/>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="password"> Password: </label>
-                <input type="password" class="form-control" id="password" placeholder="Enter Username"/> 
+                <input type="password" class="form-control" id="password" name:"password" placeholder="Enter Username" required/> 
             </div>
 
-                <button type="submit">Submit</button>
+                <button type="submit">Log in</button>
         </form>
     </section>
