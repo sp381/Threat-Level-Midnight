@@ -19,13 +19,13 @@ Movie.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    comment_text: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "comment",
-        key: "id"
-      }
-    }
+    // comment_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "comment",
+    //     key: "id"
+    //   }
+    // }
   },
   {
     sequelize,

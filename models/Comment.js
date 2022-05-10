@@ -21,6 +21,13 @@ Comment.init(
         model: 'user',
         key: 'id'
       }
+    },
+    movie_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "movie",
+        key: "id"
+      }
     }
   },
   {

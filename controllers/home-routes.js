@@ -18,13 +18,14 @@ http://localhost:3001/
 router.get("/", (req, res) => {
     Movie.findAll({
         attributes: [
+            "id",
             "movie_title",
-            "movie_url",
+            "movie_url"
         ],
         include: [
             {
                 model: Comment,
-                attributes: ["id", "comment_text", "user_id"],
+                attributes: ["id", "comment_text", "user_id", "created_at"],
                 include: {
                     model: User,
                     attributes: ["username"]
@@ -32,6 +33,7 @@ router.get("/", (req, res) => {
             },
         ]
     }).then(dbMovieData => {
+        console.log(dbMovieData)
         const movies = dbMovieData.map(movie => movie.get({ plain: true }));
         res.render("movies", { movies });
     }).catch(err => {
