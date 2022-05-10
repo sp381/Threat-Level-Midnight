@@ -1,12 +1,71 @@
 const router = require("express").Router();
-//const { User } = require("../models");
+const { User, Comment, Movie } = require("../models");
 
 //HOME PAGE RENDER NAME = HANDLEBARS FILE NAME
 http://localhost:3001/
+// router.get("/", (req, res) => {
+//     res.render("movies", {
+//         id: 1,
+//         comment_text: "meow",
+//         created_at: new Date(),
+//         movie_url: "/images/Birth_of_a_Nation.jpg",
+//         user: {
+//             username: "test_user"
+//         }
+//     });
+// });
+
 router.get("/", (req, res) => {
-    res.render("movies");
+    Movie.findAll({
+        attributes: [
+            "movie_title",
+            "movie_url",
+        ],
+        include: [
+            {
+                model: Comment,
+                attributes: ["id", "comment_text", "user_id"],
+                include: {
+                    model: User,
+                    attributes: ["username"]
+                }
+            },
+        ]
+    }).then(dbMovieData => {
+        const movies = dbMovieData.map(movie => movie.get({ plain: true }));
+        res.render("movies", { movies });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
+
+router.get("/", (req, res) => {
+    Comment.findAll({
+        attributes: [
+            "id",
+            "comment_text",
+            "created_at",
+            "movie_url:"
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ["username"]
+            }
+        ]
+    }).then(commentData => {
+        const comments = commentData.map(comment => comment.get({ plain: true }));
+
+        res.render("movies", {
+            comments
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    });
+});
 
 
 //http://localhost:3001/movies = "movies" FILE NAME
@@ -23,6 +82,8 @@ router.get("/sign-up", (req, res) => {
 router.get("/login", (req, res) => {
     res.render("login");
 });
+
+
 
 
 module.exports = router;
