@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="../public/css/style.css">
 
-    <title>Home Page</title>
+    <title> Bannded Movies </title>
 </head>
 <body>
     
@@ -27,16 +27,15 @@
                                 <a data-bs-toggle="modal" data-bs-target="#exampleModal" id="login-btn"> Log in/Sign up </a>
                         </div>
                     </div>
+                </div>
+            </div> 
                     
-                    <section>
-                            <h1 class="display-3">Movies Banned in Countries</h1>
-                            <h2 class="display-5"> Should these movies be banned? Sign up and discuss with other users why (or why not) these movies should be banned!</h2>
-                    </section>
-                </div>   
-            </div>
+                
         </header>
 
     <section class="container">
+     
+
         <!-- <img src="./images/banned.jpg" class="img-rounded" alt="empty-theater" class="container-fluid" justify="center">
         <h1 class="block text-black"> American Movies That Were Banned in Other Countries </h1>
         <h2 class="block text-black"> Should these movies be banned? Sign up and discuss with other users why (or why not) these movies should be banned!</h2> -->
@@ -78,75 +77,127 @@
   </div>
 
         <!-- Enter Flexboxes for movie posters and comment input boxes -->
+    <h1 class="display-2">Movies Banned in Countries </h1>
+    <h2 class="display-8"> Should these movies be banned? </h2>
+    <h3 class="display-8"> Sign up and discuss with other users why (or why not) these movies should be banned!</h3>
+        <!-- <h3 class="display-4">The Infamous Movies</h3> -->
+            <article class="movie-posters container row-lg-2"> 
 
-        <article class="movie-posters container"> 
-            <h3>'The Infamous Movies'</h3>
-            <div class="row">
+                    <article class="movie" id="first-movie"> 
+                        <h4 class="display-6"> The Birth of a Nation (1915) </h4>
+                        <img src="../public/images/Birth_of_a_Nation.jpg" height="400px">
+                        <p>This movie came out in 1915. Regarded as maybe the most racist movie to come out of Hollywood.
+                            Blackface is used, as well as the infamous Ku Klux Klan, who are almost shown as heroes in the film. 
+                        </p>
+                        <label for="posters">
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                        </label>
+                    </article>
 
-            
-            <article class="movie col" id="first-movie"> 
-                <img src="../public/images/Birth_of_a_Nation.jpg" height="400px">
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
+                    <article class="movie" id="second-movie"> 
+                        <h4 class="display-6"> The Interview (2014) </h4>
+                        <img src="../public/images/The Interview.jpg" height="400px">
+                        <p>Comedy mocking the country of North Korea. With the main characters plotting an assasination
+                            attempt of the leader. Obviously banned in North Korea, the country also warned the United States
+                            about releasing the film. The studio then made cuts and changes to the original version to appease
+                            North Korea.
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
+                    <article class="movie" id="third-movie">
+                        <h4 class="display-6"> Wonder Woman (2017) </h4>
+                        <img src="../public/images/Wonder Woman.jpg" height="400px">
+                        <p>Banned in the country Lebanon. Actress Gal Gadot was the sole reason, due to her being in the Israeli
+                            army earlier in her life. 
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
+                    <article class="movie" id="fourth-movie">
+                        <h4 class="display-6"> Noah (2014) </h4> 
+                        <img src="../public/images/Noah.jpg" height="400px">
+                        <p>
+                            Muslim counties and some southeast Asia banned this movie. The movie depicts Noah, who is a
+                            prophet in Muslim accustoms. 
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
+                    <article class="movie" id="fifth-movie"> 
+                        <h4 class="display-6"> The Da Vinci Code (2006) </h4>
+                        <img src="../public/images/Da Vinci Code.jpg" height="400px">
+                        <p>
+                            Most films on this list are due to religious reasons, and Da Vinci Code is no exception.
+                            Jesus is depicted in this. Catholic religion is at the forefront and have a say that is not 
+                            postive of the film.
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
+                    <article class="movie" id="sixth-movie"> 
+                        <h4 class="display-6"> Cannibal Holocaust (1980) </h4>
+                        <img src="../public/images/Cannibal Holocaust.jpg" height="400px">
+                        <p>
+                            This gory movie has gruesome scenes and also even has animal cruelty shown. With a total of
+                            6 deaths shown, as more probably were killed in unused scenes. As this is maybe the most banned
+                            movie on this list, even in todays standards.
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
+                    <article class="movie" id="seventh-movie"> 
+                        <h4 class="display-6"> Scarface (1932) </h4>
+                        <img src="../public/images/Scarface_(1932_film_poster).jpg" height="400px">
+                        <p>
+                            Coming out in 1932, this movie was well ahead of its time. Showing gore and kill scenes, back in 
+                            1932 this was too much for people to witness on screen. With more and more films showing crime and 
+                            blood, it is a bit more normal nowadays.
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
+                    <article class="movie" id="eighth-movie">
+                        <h4 class="display-6"> I am Curious (Yellow & Blue (1967-1968)) </h4>
+                        <img src="../public/images/I am Curious.jpg" height="400px">
+                        <p>
+                            Back in 1967, this raunchy movie came out to the public. Along with Scarface, this movie
+                            was probably ahead of its time. Showing sexual scenes, it has been known to be almost pornographic. 
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
+                    <article class="movie" id="ninth-movie"> 
+                        <h4 class="display-6"> Brokeback Mountain (2005) </h4>
+                        <img src="../public/images/Brokeback Mtn.jpg" height="400px">
+                        <p>
+                            This movie is banned in several countries, along with the state of Utah, due to the
+                            homosexuality shown.
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
+                    <article class="movie" id="tenth-movie"> 
+                        <h4 class="display-6"> The Last Temptation of Christ (1988) </h4>
+                        <img src="../public/images/The Last Temptation of Christ.jpg" height="400px">
+                        <p>
+                            Along with the two other films on this list, this again is banned in several countries due to
+                            showing a depiction of a religious figure. Jesus who is god in several religions, is shown as
+                            having temptaions, as the film title suggests. 
+                        </p>
+                        <label for="name"></label>
+                        <textarea class="comment-box" type="text" placeholder="Enter comment.."></textarea>
+                    </article>
+
             </article>
-
-            <article class="movie col" id="second-movie"> 
-                <img src="../public/images/The Interview.jpg" height="400px">
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-            </article>
-
-            <article class="movie col" id="third-movie"> 
-                <img src="../public/images/Wonder Woman.jpg" height="400px">
-                <label for="name"> Comment </label>
-                
-                <input class="comment-box" type="text"/>
-            </article>
-
-            <article class="movie col" id="fourth-movie"> 
-                <img src="../public/images/Noah.jpg" height="400px">
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-            </article>
-
-            <article class="movie col" id="fifth-movie"> 
-                <img src="../public/images/Da Vinci Code.jpg" height="450px">
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-            </article>
-
-            <article class="movie col" id="sixth-movie"> 
-                <h4>"Movie 6 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-            </article>
-
-            <article class="movie" id="seventh-movie"> 
-                <h4>"Movie 7 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-            </article>
-
-            <article class="movie" id="eighth-movie"> 
-                <h4>"Movie 8 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-            </article>
-
-            <article class="movie" id="ninth-movie"> 
-                <h4>"Movie 9 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-            </article>
-
-            <article class="movie" id="tenth-movie"> 
-                <h4>"Movie 10 Image"</h4>
-                <label for="name"> Comment </label>
-                <input class="comment-box" type="text"/>
-            </article>
-        </div>
-        </article>
-
     </section>
 
     <footer> 
