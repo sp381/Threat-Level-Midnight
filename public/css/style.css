@@ -74,10 +74,12 @@ footer {
     width: 400px;
     height: 100px;
     overflow-wrap: break-word;
+    padding-top: 40px;
 }
 
 .comment-box::placeholder {
     font-style: italic;
+    text-align: center;
 }
 
 
