@@ -29,7 +29,14 @@ router.post("/", (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password
-    }).then(userData => res.json(userData))
+    }).then((userData) => {
+      req.session.save(() => {
+        req.session.user_id = userData.id
+        req.session.username = userData.username
+        req.session.loggedIn = true
+        res.json(userData)
+      })
+    })
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
@@ -41,13 +48,13 @@ router.post("/", (req, res) => {
     //this is for post login
 
 router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-  successRedirect: '/comment-routes',
+  successRedirect: '/movies',
   failureRedirect: '/login',
   failureFlash: true
 }))
 
 router.get('/login', checkNotAuthenticated, (req, res) => {
-  res.render('login.ejs')
+  res.render('/login')
 })
 
 // this is for the logout
