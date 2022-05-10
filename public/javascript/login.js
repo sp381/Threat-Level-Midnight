@@ -1,15 +1,17 @@
+
 async function signupFormHandler(event) {
-    event.preventDefault();
-    console.log('hello');
-    //const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+  event.preventDefault();
   
-    if (email && password) {
+  const username = document.querySelector('#username-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+  
+  
+  if (username && email && password) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
-          //username,
+          username,
           email,
           password
         }),
@@ -18,17 +20,19 @@ async function signupFormHandler(event) {
   
       if (response.ok) {
         console.log('Sign Up Successful');
+        document.location.replace('/movies')
+        
       } else {
         alert(response.statusText);
       }
     }
-  }
-
+}
+  
   document.querySelector("#signup-form").addEventListener("submit", signupFormHandler);
 
-
-//SARAH'S CODE
-//   async function login(event) {
+  
+  //SARAH'S CODE
+  //   async function login(event) {
 //     event.preventDefault() 
 //     console.log('hello world');
 //     const email = document.querySelector('#exampleInputEmail1').value 
