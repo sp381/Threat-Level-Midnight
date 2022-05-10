@@ -12,97 +12,97 @@ initializePassport(
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'threatlevelmidnight2022@gmail.com',
-        pass: 'kmimhvgdkckrewuv'
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
+  service: 'gmail',
+  auth: {
+    user: 'threatlevelmidnight2022@gmail.com',
+    pass: 'kmimhvgdkckrewuv'
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 
 router.get('/', (req, res) => {
-    User.findAll({
-        attributes: {exclude: ['password']}
-    })
+  User.findAll({
+    attributes: { exclude: ['password'] }
+  })
     .then(userData => res.json(userData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     })
-  });
-  
-  router.post('/', (req, res) => {
-    User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
-    })
+});
+
+router.post('/', (req, res) => {
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
+  })
     .then((userInfo) => {
       req.session.save(() => {
         req.session.user_id = userInfo.id;
         req.session.username = userInfo.username;
         req.session.loggedIn = true;
-        
+
         res.json(userInfo)
       });
     })
     .then(() => {
-        let mailOptions = {
-            from: 'threatlevelmidnight2022@gmail.com',
-            to: req.body.email,
-            subject: 'Welcome aboard!',
-            text: 'Welcome Email',
-            html: `<p>Welcome to Threat Level Midnight!</p>
+      let mailOptions = {
+        from: 'threatlevelmidnight2022@gmail.com',
+        to: req.body.email,
+        subject: 'Welcome aboard!',
+        text: 'Welcome Email',
+        html: `<p>Welcome to Threat Level Midnight!</p>
             <p>This is a safe space for you to bash on movies</p>
             <p>Feel free to comment on any or reply to this email w/ suggestions</p>
             <p>From: Sarah, Carl, Evin, Francisco & Zachary</p>`
-        
-        };
-        
-        
-        transporter.sendMail(mailOptions, function (err, data) {
-            if (err) {
-                console.log('error')
-            } else {
-                console.log('Email sent successfully!')
-            }
-        });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+
+      };
+
+
+      transporter.sendMail(mailOptions, function (err, data) {
+        if (err) {
+          console.log('error')
+        } else {
+          console.log('Email sent successfully!')
+        }
       });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 
 //router.post('/', ..)
-    //this is to create a user 
+//this is to create a user 
 //POST CREATE USER | http://localhost:3001/api/users/
 router.post("/", (req, res) => {
-    User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
-    }).then((userData) => {
-      req.session.save(() => {
-        req.session.user_id = userData.id
-        req.session.username = userData.username
-        req.session.loggedIn = true
-        res.json(userData)
-      })
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
+  }).then((userData) => {
+    req.session.save(() => {
+      req.session.user_id = userData.id
+      req.session.username = userData.username
+      req.session.loggedIn = true
+      res.json(userData)
     })
-      .catch(err => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  });
-  
+  })
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+});
+
 
 //router.post('/login', ..)
-    //this is for post login
+//this is for post login
 
 router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   successRedirect: '/movies',
@@ -125,7 +125,7 @@ router.delete('/logout', (req, res) => {
 
 function checkNotAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-      return res.redirect('/')
+    return res.redirect('/')
   }
   next()
 }
