@@ -11,8 +11,12 @@ Comment.belongsTo(User, {
 });
 
 Movie.hasMany(Comment, {
-    foreignKey: "user_id"
-})
+    foreignKey: "movie_id"
+});
+
+Comment.belongsTo(Movie, {
+    foreignKey: 'movie_id'
+});
 
 module.exports = {
     User,
