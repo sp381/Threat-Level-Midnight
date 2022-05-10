@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.055)), url(../images/banned.jpg);
     color: white;
+    margin-top: 20px;
 }
 
 .hero-image {
@@ -14,9 +15,9 @@ body {
     padding-right: 20px;
 }
 .container {
-    margin: 20px;
+    /* margin: 20px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
@@ -35,7 +36,7 @@ h3 {
     text-align: center;
 }
 
-h4, h5, h6, h7, h8, h9, h10, h11, h12, h13 {
+h4 {
     font-size: 30px;
 } 
 
@@ -69,7 +70,14 @@ footer {
 
 .comment-box {
     text-align: center;
-    font-style: italic;
-    width: 300px;
-    height: 80px;
+    /* font-style: italic; */
+    width: 400px;
+    height: 100px;
+    overflow-wrap: break-word;
 }
+
+.comment-box::placeholder {
+    font-style: italic;
+}
+
+
