@@ -12,6 +12,25 @@ router.get('/', (req, res) => {
     })
 });
 
+//router.post('/', ..)
+    //this is to create a user 
+//POST CREATE USER | http://localhost:3001/api/users/
+router.post("/", (req, res) => {
+    User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    }).then(userData => res.json(userData))
+      .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+      });
+  });
+  
+
+//router.post('/login', ..)
+    //this is for post login
+
 
 
 
