@@ -4,8 +4,8 @@ const path = require('path')
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
-const hbs = exphbs.create({});
-const nodemailer = require('nodemailer')
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
 //const favicon = require('serve-favicon')
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -38,8 +38,6 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
-module.exports = nodemailer;
 
 //ZACK's CODE
 // if (process.env.NODE_ENV !== 'production') {

@@ -1,8 +1,49 @@
 body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.055)), url(../images/banned.jpg);
+    color: white;
+    margin-top: 20px;
+}
+
+.hero-image {
     background-image: url(https://i.gifer.com/7UqT.gif);
-    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover cover;
+    height: 300px;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.container {
+    /* margin: 20px;
+    margin-left: auto;
+    margin-right: auto; */
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+h3 {
+    text-align: center;
+}
+
+h4 {
+    font-size: 30px;
+} 
+
+#login-btn {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
 }
 
 .topnav {
@@ -23,17 +64,22 @@ footer {
     font-size: small;
 }
 
-h1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
+.posters {
+    text-align: center;
 }
 
-h2 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 25px;
+.comment-box {
+    text-align: center;
+    /* font-style: italic; */
+    width: 400px;
+    height: 100px;
+    overflow-wrap: break-word;
+    padding-top: 40px;
 }
 
-h3 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+.comment-box::placeholder {
+    font-style: italic;
+    text-align: center;
 }
+
+
