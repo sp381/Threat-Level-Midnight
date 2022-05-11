@@ -15,7 +15,6 @@ async function createSignupHandler(event) {
         }),
         headers: { 'Content-Type': 'application/json' }
       });
-  
       if (response.ok) {
         console.log('Sign Up Successful');
         document.location.replace('/')
@@ -23,6 +22,9 @@ async function createSignupHandler(event) {
         alert(response.statusText);
       }
     }
-  }
+};
 
-  document.querySelector(".signup-form").addEventListener("submit", createSignupHandler);
+const signupButton = document.querySelector("#create-signup");
+  if(signupButton) {
+    signupButton.addEventListener("click", createSignupHandler);
+  }; 
