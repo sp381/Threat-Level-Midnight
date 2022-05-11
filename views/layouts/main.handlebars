@@ -28,8 +28,7 @@
                                 {{#if loggedIn}}
                                 <button class="btn btn-light" id="logout">Logout</button>
                                 {{else}}
-                                <a  href="/login" id="login-btn">Log in</a>
-                                <a href="/sign-up"  id="login-btn">Sign Up</a>
+                                <a  data-bs-toggle="modal" data-bs-target="#exampleModal" id="login-btn">Log in</a>
                                 {{/if}}
                         </div>
                 </div>
@@ -49,20 +48,20 @@
                             <h5 class="modal-title" id="exampleModalLabel">Login</h5>
                         </div>
                         <div class="modal-body">
-                            <form id="login-form">
+                            <form class="login-form">
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <label for="exampleInputEmail1" class="text-dark form-label">Email address</label>
                                     <input type="email" class="form-control" id="email-login"
                                         aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <label for="exampleInputPassword1" class="text-dark form-label">Password</label>
                                     <input type="password" class="form-control" id="password-login">
                                 </div>
-                                <button type="button" class="btn btn-primary" id="login-button">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="login-button">Submit</button>
                             </form>
                             <br />
-                            <button type="button" class="btn btn-link"><a href="sign-up"> Sign Up </a></button>
+                            <button type="button" class="btn btn-link"><a href="/sign-up"> Sign Up </a></button>
                         </div>
                         <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -71,8 +70,9 @@
                     </div>
                 </div>
             </div>
-            {{{body}}}
+            <a class="text-light" href="/"><h1>Movies Banned in Countries </h1></a>
     </section>
+            {{{body}}}
     <footer>
         <p> 🎥 Created by Carl Bush, Evin White, Francisco Rivera, Sarah Powell and Zachary Lopez @2022 </p>
     </footer>

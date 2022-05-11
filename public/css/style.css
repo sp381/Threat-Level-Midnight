@@ -88,11 +88,11 @@ footer {
 
 .comment-box {
     text-align: center;
-    /* font-style: italic; */
     width: 400px;
     height: 100px;
-    overflow-wrap: break-word;
     padding-top: 40px;
+    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0.726);
 }
 
 .comment-box::placeholder {
@@ -103,5 +103,4 @@ footer {
 .movie {
     padding-top: 50px;
 }
-
 

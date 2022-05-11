@@ -1,4 +1,4 @@
-async function createSignupHandler(event) {
+async function createUser(event) {
     event.preventDefault();
 
     const username = document.querySelector('#username-signup').value.trim();
@@ -24,7 +24,5 @@ async function createSignupHandler(event) {
     }
 };
 
-const signupButton = document.querySelector("#create-signup");
-  if(signupButton) {
-    signupButton.addEventListener("click", createSignupHandler);
-  }; 
+document.querySelector("#create-signup").addEventListener('submit', createUser)
+
