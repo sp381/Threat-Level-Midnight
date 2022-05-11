@@ -1,16 +1,23 @@
-<!-- Enter Flexboxes for movie posters and comment input boxes -->
-<article class="movie-posters">
-    <h3>'The Infamous Movies'</h3>
+<h1 class="display-2">Movies Banned in Countries </h1>
+<h2 class="display-8"> Should these movies be banned? </h2>
+<h3 class="display-8"> Sign up and discuss with other users why (or why not) these movies should be banned!</h3>
+
+<article class="movie-posters container row-lg-2">
+
     {{#each movies as |movie|}}
-    {{movie_title}}
-    <article class="movie" id="first-movie">
+    
+    <article class="movie">
+        <h4 class="display-6">{{movie_title}}</h4>
         <img src="{{movie_url}}" height="400px">
-        <textarea class="comment-box" id="comment-{{id}}"></textarea>
+        <textarea class="comment-box" id="comment-{{id}}" placeholder="Enter comment.."></textarea>
         <button type="submit" class="add-comment-button" data-movie-id="{{id}}">Add Comment</button>
         {{#each movie.comments as |comment|}}
-            <div>{{comment.user.username}} on {{format_date comment.created_at}} </div>
-            <div>{{comment.comment_text}}</div>
+        <ul style="list-style-type:none; padding-inline-start: 0px">
+            <li>{{comment.user.username}} on {{format_date comment.created_at}} </li>
+            <li>{{comment.comment_text}}</li>
+        </ul>
+        {{/each}}
         {{/each}}
     </article>
-    {{/each}}
+    
 </article>
