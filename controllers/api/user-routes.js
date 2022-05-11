@@ -1,5 +1,13 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const passport = require('passport');
+
+const initializePassport = require('../../config/passport')
+initializePassport(
+  passport,
+  email => User.find(user => user.email === email),
+  id => User.find(user => user.id === id)
+)
 
 const nodemailer = require('nodemailer');
 const withAuth = require('../../utils/auth');
@@ -98,6 +106,25 @@ router.post('/login', (req, res) => {
     });
   });
 });
+
+router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+  successRedirect: '/movies',
+  failureRedirect: '/login',
+  failureFlash: true
+}))
+
+router.get('/login', checkNotAuthenticated, (req, res) => {
+  res.render('/login')
+})
+
+// authenticator
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+      return res.redirect('/')
+  }
+  next()
+}
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
