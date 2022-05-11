@@ -23,9 +23,9 @@
                             
                                 
                                 {{#if loggedIn}}
-                                <button class="btn" id="logout">logout</button>
+                                <button class="btn btn-light" id="logout">Logout</button>
                                 {{else}}
-                                <a href="/login" id="login-btn">Log in</a>
+                                <a  href="/login" id="login-btn">Log in</a>
                                 <a href="/sign-up"  id="login-btn">Sign Up</a>
                                 {{/if}}
                         </div>
@@ -37,33 +37,6 @@
         </header>
 
     <section class="container">
-
-
-  {{!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-        </div>
-        <div class="modal-body">
-            <form id="login-form">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="password-signup">
-                </div>
-                <button type="submit" class="btn btn-primary" id="signup-form">Submit</button>
-              </form>
-              <br/>
-              <button type="button" class="btn btn-link"><a href="./sign-up.html"> Sign Up </a></button>
-        </div>
-
-      </div>
-    </div>
-  </div> --}}
 
     <a class="display-2 text-light" href="/"><h1 >Movies Banned in Countries </h1></a>
     <h2 class="display-8"> Should these movies be banned? </h2>

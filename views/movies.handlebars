@@ -7,11 +7,16 @@
     <article class="movie" id="first-movie">
         <img src="{{movie_url}}" height="400px">
         <p>{{movie_text}}</p>
-        <textarea class="comment-box" id="comment-{{id}}"></textarea>
-        <button type="submit" class="add-comment-button" data-movie-id="{{id}}">Add Comment</button>
+        <div class="d-flex justify-content-center">
+        <textarea class="comment-box form-control" id="comment-{{id}}"></textarea>
+        <button type="submit" class="add-comment-button btn btn-primary" data-movie-id="{{id}}">Add Comment</button>
+        </div>
         {{#each movie.comments as |comment|}}
-            <div>{{comment.user.username}} on {{format_date comment.created_at}} </div>
-            <div>{{comment.comment_text}}</div>
+        <div class="card bg-light bg-opacity-25 container w-50">
+            <p class="card-text fs-6 blockquote-footer">{{comment.user.username}} on {{format_date comment.created_at}} </p>
+            <p class="card-text text-dark fs-5">{{comment.comment_text}}</p>
+        </div>
+        <br>
         {{/each}}
     </article>
     {{/each}}
