@@ -5,8 +5,9 @@ const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
 //const favicon = require('serve-favicon')
+const app = express();
+const PORT = process.env.PORT || 3001;
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -20,8 +21,8 @@ const sess = {
   })
 };
 
-const app = express();
-const PORT = process.env.PORT || 3001;
+app.use(session(sess));
+const hbs = exphbs.create({ helpers });
 
 
 app.engine('handlebars', hbs.engine);
@@ -31,7 +32,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(favicon(path.join(__dirname,'public','images','favicon-16x16.png')));
-app.use(session(sess));
 
 app.use(routes);
 

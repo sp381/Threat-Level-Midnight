@@ -13,27 +13,69 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Threat Level Midnight</title>
 </head>
-
 <body>
-    <header>
-        <section>
-            <h1 class="block text-black"> American Movies That Were Banned in Other Countries </h1>
-            <h2 class="block text-black"> Should these movies be banned? Sign up and discuss with other users why (or
-                why not) these movies should be banned!</h2>
-        </section>
+    
+        <header> 
+            <div class="hero-image">
+                <div class="hero-text"> 
+                    <div class="topnav">
+                        <div class="login-container">
+                            
+                                
+                                {{#if loggedIn}}
+                                <button class="btn" id="logout">logout</button>
+                                {{else}}
+                                <a href="/login" id="login-btn">Log in</a>
+                                <a href="/sign-up"  id="login-btn">Sign Up</a>
+                                {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div> 
+                    
+                
+        </header>
 
-        <nav>
-            <ul>
-                <!-- List Item Element -->
-                <button type="button" class="btn btn-link btn-block"><a href="./sign-up"> Sign Up </a></button>
-                <button type="button" class="btn btn-link btn-block"><a href="login"> Login </a></button>
-            </ul>
-        </nav>
-    </header>
+    <section class="container">
+
+
+  {{!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        </div>
+        <div class="modal-body">
+            <form id="login-form">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password-signup">
+                </div>
+                <button type="submit" class="btn btn-primary" id="signup-form">Submit</button>
+              </form>
+              <br/>
+              <button type="button" class="btn btn-link"><a href="./sign-up.html"> Sign Up </a></button>
+        </div>
+
+      </div>
+    </div>
+  </div> --}}
+
+    <a class="display-2 text-light" href="/"><h1 >Movies Banned in Countries </h1></a>
+    <h2 class="display-8"> Should these movies be banned? </h2>
+    <h3 class="display-8"> Sign up and discuss with other users why (or why not) these movies should be banned!</h3>
+
     {{{body}}}
     <footer>
         <p> 🎥 Created by Carl Bush, Evin White, Francisco Rivera, Sarah Powell and Zachary Lopez </p>
     </footer>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>

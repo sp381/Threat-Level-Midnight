@@ -1,10 +1,12 @@
 <!-- Enter Flexboxes for movie posters and comment input boxes -->
+
 <article class="movie-posters">
     <h3>'The Infamous Movies'</h3>
     {{#each movies as |movie|}}
     {{movie_title}}
     <article class="movie" id="first-movie">
         <img src="{{movie_url}}" height="400px">
+        <p>{{movie_text}}</p>
         <textarea class="comment-box" id="comment-{{id}}"></textarea>
         <button type="submit" class="add-comment-button" data-movie-id="{{id}}">Add Comment</button>
         {{#each movie.comments as |comment|}}
@@ -14,4 +16,7 @@
     </article>
     {{/each}}
 </article>
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/upload.js"></script>
+{{/if}}

@@ -1,4 +1,7 @@
+const { BLOB } = require('sequelize/types');
 const { Movie } = require('../models');
+
+
 
 const movieData = [
     {

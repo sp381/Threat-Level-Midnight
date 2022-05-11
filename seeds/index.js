@@ -7,8 +7,8 @@ const sequelize = require('../config/connection')
 const seedAll = async () => {
     await sequelize.sync({ force: true });
     await seedUsers();
-    await seedComments();
     await seedMovies();
+    await seedComments();
     console.log('-----ALL SEEDED-----');
 
     process.exit(0);

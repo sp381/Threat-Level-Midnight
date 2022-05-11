@@ -1,13 +1,9 @@
 async function createSignupHandler(event) {
     event.preventDefault();
-    console.log('hello world');
 
-    const username = document.querySelector('#create-username').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#create-password').value.trim();
-    console.log(username);
-    console.log(email);
-    console.log(password);
+    const password = document.querySelector('#password-signup').value.trim();
     
     if (username && email && password) {
       const response = await fetch('/api/users', {
@@ -22,10 +18,11 @@ async function createSignupHandler(event) {
   
       if (response.ok) {
         console.log('Sign Up Successful');
+        document.location.replace('/')
       } else {
         alert(response.statusText);
       }
     }
   }
 
-  document.querySelector("#create-signup").addEventListener("submit", createSignupHandler);
+  document.querySelector(".signup-form").addEventListener("submit", createSignupHandler);
