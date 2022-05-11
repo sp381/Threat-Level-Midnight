@@ -1,5 +1,13 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const passport = require('passport');
+
+const initializePassport = require('../../config/passport')
+initializePassport(
+  passport,
+  email => User.find(user => user.email === email),
+  id => User.find(user => user.id === id)
+)
 
 const nodemailer = require('nodemailer');
 const withAuth = require('../../utils/auth');
