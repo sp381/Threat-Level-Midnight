@@ -19,13 +19,16 @@ async function createSignupHandler(event) {
         }),
         headers: { 'Content-Type': 'application/json' }
       });
-  
       if (response.ok) {
         console.log('Sign Up Successful');
+        document.location.href = "/";
       } else {
         alert(response.statusText);
       }
     }
   }
 
-  document.querySelector("#create-signup").addEventListener("submit", createSignupHandler);
+  const signupButton = document.querySelector("#create-signup");
+  if(signupButton) {
+    signupButton.addEventListener("click", createSignupHandler);
+  }; 

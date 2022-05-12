@@ -1,11 +1,12 @@
 const express = require('express');
 const routes = require('./controllers');
-const path = require('path')
+const path = require('path');
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
+//const passport = require('passport');
 //const favicon = require('serve-favicon')
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -32,7 +33,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(favicon(path.join(__dirname,'public','images','favicon-16x16.png')));
 app.use(session(sess));
-
+// app.use(passport.initialize());
+// app.use(passport.session());
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
@@ -48,7 +50,7 @@ sequelize.sync({ force: false }).then(() => {
 // const express = require('express')
 // const session = require('express-session')
 // const flash = require('express-flash')
-// const passport = require('passport')
+
 // const bcrypt = require('bcrypt')
 // const app = express()
 
@@ -71,8 +73,7 @@ sequelize.sync({ force: false }).then(() => {
 //   resave: false,
 //   saveUninitialized: false
 // }))
-// app.use(passport.initialize())
-// app.use(passport.session())
+
 
 // app.get('/', checkAuthenticated, (req, res) => {
 //   res.render('index.ejs', { name: req.user.name })
