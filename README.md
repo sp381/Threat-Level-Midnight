@@ -1,13 +1,5 @@
 # Project Two: Threat-Level-Midnight
 
-## Table of Contents
-* User Story
-* Requirements
-* Installation
-* Screenshot of Apllication
-* Links 
-* Contributors
-
 ## Description 
 AS a movie lover I WANT a web application to discuss movies, especially movies that are American made and banned in other countries SO THAT I create an open dialoge and hear other unique perspectives. 
 
@@ -48,9 +40,11 @@ AS a movie lover I WANT a web application to discuss movies, especially movies t
 
 
 ## Screenshot of Application
+<img width="948" alt="TLM2022" src="https://user-images.githubusercontent.com/95602064/167985574-a903b8e9-229f-4bc0-9f86-e851e71533c0.PNG">
 
 ## Link to Deployed Application 
-
+Github URL: https://github.com/sp381/Threat-Level-Midnight 
+Deployed Heroku link: https://secret-ridge-77127.herokuapp.com/ 
 ## Contributors 
 - Carl Bush 
 - Evin White
