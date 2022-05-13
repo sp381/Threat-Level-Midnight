@@ -1,5 +1,7 @@
 const { Movie } = require('../models');
 
+
+
 const movieData = [
     {
         movie_title: 'The Birth of a Nation (1915)',

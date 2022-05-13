@@ -17,15 +17,19 @@ Movie.init(
     },
     movie_url: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
-    // comment_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "comment",
-    //     key: "id"
-    //   }
-    // }
+    movie_text: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
